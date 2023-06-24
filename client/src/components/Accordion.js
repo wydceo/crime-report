@@ -1,7 +1,6 @@
-import { crimeData } from "../crime_record"; // mock up date for testing
 import AccordionItem from "./AccordionItem";
 
-const Accordion = () => {
+const Accordion = ({crimeData}) => {
   return (
     <ul className="accordion">
       {crimeData.map((record, index) => (

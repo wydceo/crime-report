@@ -17,6 +17,17 @@ body {
   padding: 0 10px;
 }
 
+.suburb_button, .offenceleveltwo_button {
+  color: #fffef2;
+  background-color: #333 ;
+  border: 1px solid rgba(51,51,51,.2);
+  height: 60px;
+  min-width: 210px;
+  padding: 21px 23px;
+  position: relative;
+  transition: all .5s ease;
+  margin: 10px;
+}
 .heading {
   font-size: 23px;
   margin-bottom: 20px;
@@ -31,7 +42,7 @@ body {
   border-bottom: 1px solid #bcbbb4;
 }
 
-.button {
+.panel {
   font-size: 16px;
   background-color: #fffef2;
   color: #333;
@@ -51,7 +62,7 @@ body {
   font-size: 26px;
 }
 
-.record {
+.item {
   background-color: #f7f7f7;
   padding: 20px;
 }
@@ -59,7 +70,7 @@ body {
 .accordion_item.active .button {
   background-color: #fffef2;
 }
-.record_wrapper {
+.item_wrapper {
   font-size: 12px;
   height: 0;
   overflow: hidden;

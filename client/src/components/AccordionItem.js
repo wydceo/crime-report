@@ -1,7 +1,6 @@
-import { useRef } from "react";
-import { useState } from "react";
+import { useRef, useState } from "react";
 
-const AccordionItem = ({ record, onToggle, active }) => {
+const AccordionItem = ({ record }) => {
   const [clicked, setClicked] = useState(false);
   const contentEl = useRef();
   const { id,  reported_date} = record;
@@ -12,20 +11,20 @@ const AccordionItem = ({ record, onToggle, active }) => {
 
   return (
     <li className={`accordion_item ${clicked ? "active" : ""}`}>
-      <button className="button" onClick={handleToggle}>
+      <button className="panel" onClick={handleToggle}>
         {id}
         <span className="control">{clicked ? "-" : "+"}</span>
       </button>
       <div
         ref={contentEl}
-        className="record_wrapper"
+        className="item_wrapper"
         style={
           clicked
             ? { height: contentEl.current.scrollHeight }
             : { height: "0px" }
         }
       >
-        <div className="record">{reported_date}</div>
+        <div className="item">{reported_date}</div>
       </div>
     </li>
   )
