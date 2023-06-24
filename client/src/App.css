@@ -12,7 +12,7 @@ body {
 
 .container {
   text-align: center;
-  max-width: 600px;
+  max-width: 700px;
   margin: 6rem auto 4rem;
   padding: 0 10px;
 }
@@ -48,7 +48,7 @@ body {
 }
 
 .control {
-  font-size: 20px;
+  font-size: 26px;
 }
 
 .record {
@@ -56,11 +56,11 @@ body {
   padding: 20px;
 }
 
-/* activate toggle */
 .accordion_item.active .button {
-  background-color: #105057;
+  background-color: #fffef2;
 }
 .record_wrapper {
+  font-size: 12px;
   height: 0;
   overflow: hidden;
   transition: height ease 0.2s;
