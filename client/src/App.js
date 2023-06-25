@@ -11,7 +11,7 @@ const App = () => {
   
   useEffect(() => {
     let ignore = false;
-    fetch(`./crime_record.json`)
+    fetch(`/api/crimes`)
       .then(response => response.json())
       .then(json => {
         if (!ignore) {

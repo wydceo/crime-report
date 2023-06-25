@@ -29,7 +29,11 @@ body {
   margin: 10px;
 }
 .suburb_button:focus, 
-.offenceleveltwo_button:focus {
+.offenceleveltwo_button:focus,
+.suburb_button:visited, 
+.offenceleveltwo_button:visited,
+.suburb_button:active, 
+.offenceleveltwo_button:active {
   color: #333;
   background-color: #fffef2 ;
 }
