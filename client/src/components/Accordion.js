@@ -3,10 +3,10 @@ import AccordionItem from "./AccordionItem";
 const Accordion = ({crimeData}) => {
   return (
     <ul className="accordion">
-      {crimeData.map((record, index) => (
+      {Object.keys(crimeData).map((item) => (
         <AccordionItem
-          key={index}
-          record={record}
+          key={item}
+          item={crimeData[item]}
         />
       ))}
     </ul>

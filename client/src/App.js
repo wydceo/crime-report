@@ -1,21 +1,22 @@
 import { useEffect, useState } from "react";
 import Header from './components/Header';
 import Accordion from './components/Accordion';
+import { dataGroupBy } from './utils/dataGroupBy';
+import { groupTypeContext } from './context/GroupTypeContext';
 import './App.css';
 
-// import { crimeData } from "./mock/crime_record";
-
 const App = () => {
-  const [crimeData, setCrimeData] = useState([]);
-  const [action, setAction] = useState("suburb");
-
+  const [crimeData, setCrimeData] = useState({});
+  const [action, setAction] = useState("suburb_incident");
+  
   useEffect(() => {
     let ignore = false;
     fetch(`./crime_record.json`)
       .then(response => response.json())
       .then(json => {
         if (!ignore) {
-          setCrimeData(json);
+          let resData = dataGroupBy(json, action);
+          setCrimeData(resData);
         }
       });
     return () => {
@@ -25,26 +26,26 @@ const App = () => {
   }, [action]);
 
   const handleClickSuburbButton = () => {
-    setAction("suburb");
+    setAction("suburb_incident");
   };
 
   const handleClickOffenceLevelTwoButton = () => {
-    setAction("offence");
+    setAction("offence_level_2");
   };
 
   return (
-    <div className="container">
-      <>
-      <button className="suburb_button" onClick={handleClickSuburbButton}>
-        Group By Suburb
-      </button>
-      <button className="offenceleveltwo_button" onClick={handleClickOffenceLevelTwoButton}>
-        Group By Offence Level 2 Description
-      </button>
-      </>
-      <Header />
-      <Accordion crimeData={crimeData} />
-    </div>
+    <groupTypeContext.Provider value={action}>
+      <div className="container">
+        <button className="suburb_button" onClick={handleClickSuburbButton}>
+          Group By Suburb
+        </button>
+        <button className="offenceleveltwo_button" onClick={handleClickOffenceLevelTwoButton}>
+          Group By Offence Level 2 Description
+        </button>
+        <Header />
+        <Accordion crimeData={crimeData} />
+      </div>
+    </groupTypeContext.Provider>
   );
 }
 
