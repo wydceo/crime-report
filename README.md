@@ -20,3 +20,7 @@ Note: In order to check this api call properly, you can go to MySql console `htt
 
 3. To check 'Offence count' by 'Offence Level 1 Description'
 Open `http://localhost:3050/api/count` on a browser.
+
+Know Issue:
+You might notice a ws error showing in console after you run the application. After you open `http://localhost:3050/` on a browser, opened developer tool and checked "console" tab, you will notice there are constantly error "WebSocket connection to 'ws://localhost:3000/ws' failed", this is a known issue for creat-react-app:
+`https://github.com/facebook/create-react-app/issues/11779`. This is not showing for local developing, just after deployed into Docker container. I've tried some of the solutions, not worked for this application.
