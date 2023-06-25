@@ -1,70 +1,21 @@
-# Getting Started with Create React App
+Run `npm i` inside the client directory
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Run `npm i` inside the server directory
 
-## Available Scripts
+Run `docker-compose up --build` inside the main project directory, eg: you pull all codes under "crimereport" directory
 
-In the project directory, you can run:
+Access the Adminer using route `http://localhost:8000/`. This is to access mysql database, the database name is "crimes", tables name is "crimes". All records has been automaticly imported through setup.sql. 
+To log in, use `mysql_db` as the server Username as `root` and password as `MYSQL_ROOT_PASSWORD`.
 
-### `npm start`
+To start interacting with the accordion application, open `http://localhost:3050/` on a browser.
+To start interacting with the api calls, open `http://localhost:3050/api/` on a browser.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+1. To check all crime records
+Open `http://localhost:3050/api/crimes` on a browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+2. To check all records by 'Reported Date'
+Open `http://localhost:3050/api/crimesbydate?reported_date="01/07/2019"` on a browser, don't miss that ? mark and also "" wrapping the date.
+Note: In order to check this api call properly, you can go to MySql console `http://localhost:8000/`, after logged in, click database "crimes" and click on table "crimes", and then click on "Select Data" tab, in there, you will see a list of all records, just select one record and click "edit". After edited one record reported_date to "01/07/2029", then open `http://localhost:3050/api/crimesbydate?reported_date="01/07/2029"` on a browser, now you should be able to see only one record showing on the window.
 
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+3. To check 'Offence count' by 'Offence Level 1 Description'
+Open `http://localhost:3050/api/count` on a browser.
