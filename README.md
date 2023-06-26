@@ -24,14 +24,17 @@ Make sure nodejs version: v20.3.1
     To start interacting with the api calls, open `http://localhost:3050/api/` on a browser.
 
     a. To check all crime records
-    Open `http://localhost:3050/api/crimes` on a browser.
+
+        Open `http://localhost:3050/api/crimes` on a browser.
 
     b. To check all records by 'Reported Date'
-    Open `http://localhost:3050/api/crimesbydate?reported_date="01/07/2019"` on a browser, don't miss that ? mark and also "" wrapping the date.
-    Note: In order to check this api call properly, you can go to MySql console `http://localhost:8000/`, after logged in, click database "crimes" and click on table "crimes", and then click on "Select Data" tab, in there, you will see a list of all records, just select one record and click "edit". After edited one record reported_date to "01/07/2029", then open `http://localhost:3050/api/crimesbydate?reported_date="01/07/2029"` on a browser, now you should be able to see only one record showing on the window.
+
+        Open `http://localhost:3050/api/crimesbydate?reported_date="01/07/2019"` on a browser, don't miss that ? mark and also "" wrapping the date.
+
+        Note: In order to check this api call properly, you can go to MySql console `http://localhost:8000/`, after logged in, click database "crimes" and click on table "crimes", and then click on "Select Data" tab, in there, you will see a list of all records, just select one record and click "edit". After edited one record reported_date to "01/07/2029", then open `http://localhost:3050/api/crimesbydate?reported_date="01/07/2029"` on a browser, now you should be able to see only one record showing on the window.
 
     c. To check 'Offence count' by 'Offence Level 1 Description'
-    Open `http://localhost:3050/api/count` on a browser.
+        Open `http://localhost:3050/api/count` on a browser.
 
 6. Unit Testing
 
